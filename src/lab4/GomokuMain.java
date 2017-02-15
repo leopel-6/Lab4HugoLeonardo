@@ -3,7 +3,7 @@ import lab4.client.*;
 import lab4.gui.*;
 
 public class GomokuMain {
-	private static int port;
+	private static int port = 4500;	// The default port number is 4500.
 
 	public static void main(String[] argv) {
 		if (argv.length == 1) {
@@ -11,10 +11,7 @@ public class GomokuMain {
 			
 			if (tempPort > 0) {	// A port number needs to be a positive integer.
 				port = tempPort;
-			}	// Should we set the port to default number if the tempPort is < 0?
-		} else {
-			port = 4500;
-		}
+			}
 		
 		GomokuClient client = new GomokuClient(port);
 		GomokuGameState gameState = new GomokuGameState(client);
